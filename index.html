@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section class="calculator">
+      <h1>The Pinkulator</h1>
+
+      <div class="screen">
+        <input type="text" id="result" readonly />
+      </div>
+
+      <div class="btn-container">
+        <button onclick="clearText()">C</button>
+        <button onclick="deleteText()">DEL</button>
+        <button onclick="buttonClick('%')">%</button>
+        <button onclick="buttonClick('/')">÷</button>
+
+        <button onclick="buttonClick(7)">7</button>
+        <button onclick="buttonClick(8)">8</button>
+        <button onclick="buttonClick(9)">9</button>
+        <button onclick="buttonClick('*')">x</button>
+
+        <button onclick="buttonClick(4)">4</button>
+        <button onclick="buttonClick(5)">5</button>
+        <button onclick="buttonClick(6)">6</button>
+        <button onclick="buttonClick('-')">-</button>
+
+        <button onclick="buttonClick(1)">1</button>
+        <button onclick="buttonClick(2)">2</button>
+        <button onclick="buttonClick(3)">3</button>
+        <button onclick="buttonClick('+')">+</button>
+
+        <button class="double-width" onclick="buttonClick(0)">0</button>
+        <button onclick="buttonClick('.')">.</button>
+        <button onclick="calculate()">=</button>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.1.0/math.min.js"></script>
+  </body>
+</html>
