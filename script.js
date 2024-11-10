@@ -14,8 +14,8 @@ let text = "";
 // Function to handle button click
 const buttonClick = function (buttonValue) {
   text += buttonValue;
+  document.getElementById("error-message").textContent = "";
   displayText();
-  console.log(text);
 };
 // Function to display text on screen
 const displayText = function () {
@@ -32,15 +32,18 @@ const deleteText = function () {
   text = text.slice(0, -1);
   displayText();
 };
-
+// Function to calculate
 const calculate = function () {
   let result = math.evaluate(text);
   const resultScreen = document.getElementById("result");
   resultScreen.value = result;
   text = result.toString();
   displayText();
+  // Handles error
+  if (!isFinite(result)) {
+    document.getElementById("error-message").textContent = "Invalid Input";
+    displayText("");
+    text = "";
+    return;
+  }
 };
-
-if (buttonValue / 0) {
-  displayText("Invalid Input");
-}
